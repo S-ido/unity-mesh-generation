@@ -5,14 +5,15 @@ using System.Linq;
 
 [Serializable]
 public class Grid {
-	public static readonly string GRID_PATH = Application.dataPath + "/grid.dat";
 
 	public List<Point> points { get; set; }
 
 	private FileManager fileManager;
+	private string savePath;
 
-	public Grid() {
+	public Grid(string path) {
 		points = new List<Point>();
+		savePath = path;
 		fileManager = new FileManager();
 	}
 
@@ -36,11 +37,11 @@ public class Grid {
 	}
 
 	public void Save() {
-		fileManager.Save(GRID_PATH, points);
+		fileManager.Save(savePath, points);
 	}
 
 	public void Load() {
-		List<Point> data = (List<Point>)fileManager.Load(GRID_PATH);
+		List<Point> data = (List<Point>)fileManager.Load(savePath);
 		if (data != null)
 			points = data;
 	}

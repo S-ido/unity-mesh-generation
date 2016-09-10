@@ -25,8 +25,8 @@ public class Designe : MonoBehaviour {
 		}
 	}
 
-	void Awake() {
-		grid = new Grid();
+	void Start() {
+		grid = new Grid(Application.dataPath + "/grid.dat");
 		grid.Load();
 	}
 

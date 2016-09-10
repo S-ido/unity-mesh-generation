@@ -7,7 +7,7 @@ namespace Picadilla.Zad1 {
         [Test]
         public void OnePointAvailable_AfterPointIsAdded() {
             //Arrange
-            Grid grid = new Grid();
+            Grid grid = new Grid(Application.dataPath + "/grid.dat");
 
             //Act
             grid.AddPoint(Vector3.zero, 0.1f);
@@ -19,7 +19,7 @@ namespace Picadilla.Zad1 {
         [Test]
         public void NoPointsAvailable_AfterReset() {
             //Arrange
-            Grid grid = new Grid();
+            Grid grid = new Grid(Application.dataPath + "/grid.dat");
             grid.AddPoint(Vector3.zero, 0.1f);
 
             //Act
@@ -32,7 +32,7 @@ namespace Picadilla.Zad1 {
         [Test]
         public void NoPointsAvailable_AfterAddAndRemovePoint() {
             //Arrange
-            Grid grid = new Grid();
+            Grid grid = new Grid(Application.dataPath + "/grid.dat");
 
             //Act
             grid.AddPoint(Vector3.zero, 0.1f);
@@ -45,7 +45,7 @@ namespace Picadilla.Zad1 {
         [Test]
         public void NoPointsRemoved_IfDistanceIsGreaterThanRemoveDistance() {
             //Arrange
-            Grid grid = new Grid();
+            Grid grid = new Grid(Application.dataPath + "/grid.dat");
             grid.AddPoint(-Vector3.one, 0.1f);
 
             //Act
@@ -58,7 +58,7 @@ namespace Picadilla.Zad1 {
         [Test]
         public void GridValid_AfterAddThreePoints() {
             //Arrange
-            Grid grid = new Grid();
+            Grid grid = new Grid(Application.dataPath + "/grid.dat");
 
             //Act
             grid.AddPoint(Vector3.zero, 0.1f);
@@ -72,7 +72,7 @@ namespace Picadilla.Zad1 {
         [Test]
         public void GridInvalid_AfterCtreate() {
             //Arrange
-            Grid grid = new Grid();
+            Grid grid = new Grid(Application.dataPath + "/grid.dat");
 
             //Assert
             Assert.IsFalse(grid.IsValid());

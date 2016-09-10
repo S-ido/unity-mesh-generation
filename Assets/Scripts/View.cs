@@ -8,7 +8,7 @@ public class View : MonoBehaviour {
 	private Triangulation triangulation;
 
 	void Awake() {
-		grid = new Grid();
+		grid = new Grid(Application.dataPath + "/grid.dat");
 		grid.Load();
 	}
 
